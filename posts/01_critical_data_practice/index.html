@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><title>CRITICAL CODING - DECOLONISING COMPUTATIONAL THINKING &ndash; PSICODATOS</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="//localhost:1313/css/palettes/windows-95-light.css">
+<link rel="stylesheet" href="//localhost:1313/css/risotto.css">
+<link rel="stylesheet" href="//localhost:1313/css/custom.css">
+
+
+
+
+
+
+
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><nav class="page__nav main-nav">
+    <ul>
+    <h1 class="page__logo"><a href="//localhost:1313/" class="page__logo-inner">PSICODATOS</a></h1>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="//localhost:1313/about/" title="">About</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item active" href="//localhost:1313/posts/" title="Posts">Posts</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>CRITICAL CODING - DECOLONISING COMPUTATIONAL THINKING</h1>
+    </header>
+    <div class="content__body">
+        <h2 id="taller-01-dot-psicogeografía-con-datos">TALLER 01. PSICOGEOGRAFÍA CON DATOS <span class="tag"><span class="posts">posts</span></span></h2>
+<p>:EXPORT_FILE_NAME: TallerPsicoData</p>
+<h3 id="p01-dot-intro-p5-dot-js">P01. Intro p5.js</h3>
+<h4 id="introducción"><strong>Introducción</strong></h4>
+<p>Este taller esta basado en Kit Kuksenok receta llamada <em><a href="https://criticalcode.recipes/contributions/critical-data-practice-at-home-and-with-friends">Critical Data practice Home with Friends</a></em>, y busca mediante el uso de datos a través de la práctica de programación creativa, establecer una relación crítica con los amplios problemas socio-tecnicos que emerjen en una sociedad que está crecientemente determinada por datos.</p>
+<p>De manera resumida, el taller busca que cada participante cree representaciones psicogeografías mediante el desarrollo de programas, usando herramientas libres con tecnología web, que nos permitan la recolección, el ordenamiento y la visualización de datos que respondan a experiencias individuales, subjetivos y especulativos en relación a lugares y espacios de la ciudad. Posteriormente, con los datos recogidos por todos ustedes haremos un pseudo mapa para que otros puedan navegar psicogeográficamente la ciudad con sus dispositivos.</p>
+<p>Este taller es para personas que saben algo o nada de programación, por lo que asumimos que los participantes tienen una reducida o nula experiencia en programación.</p>
+<h4 id="objetivos"><strong>Objetivos</strong></h4>
+<p>El objetivo general del taller es crear un mapa psicogeográfico digital web con el cual se pueda navegar por la ciudad.</p>
+<p>Los objetivos específicos del taller son los siguientes:</p>
+<ul>
+<li>Introducción a la programación creativa usando la librería p5.js Javascript.</li>
+<li>Aprender métodos para capturar y/o registrar datos y  representarlos visual o sonoramente.</li>
+<li>Entender diferentes formas de visualización de datos.</li>
+<li>Interrogar aspectos de como la data subjetiva y especulativa pueder ser capturada y manipulada <em>in-situ</em>.</li>
+<li>Reflexionar acerca de amplios problemas de la sociedad de datos en la que estamos viviendo.*</li>
+<li>Romper barreras conceptuales acerca del uso de datos al considerar datos fuera de los cánones de lo que normalmente se considera útil.*</li>
+<li>Interrogar como los datos personales son generalmente son usados y manipulados para establecer discursos críticos acerca de la tecno-cultura dominante relacionada con la productividad, la auto explotación y la explotación de otros.*</li>
+</ul>
+<h4 id="definición-programación-creativa"><strong>Definición Programación Creativa</strong></h4>
+<p>¿Que es la programación creativa?</p>
+<p>Cuando hablamos de <em>programación creativa</em> o <em>creative coding</em> en ingles, entendemos que es una parte de la tecno-cultura computacional que no solo se enfoca en resolver problemas. Mas bien, es una forma cultural que implica el cuestionamiento de los paradigmas tecnológicos existentes, y envisionar posibles cambios culturales en los sistemas técnicos mediante la práctica de programar.</p>
+<p>En otras palabras, la programación creativa enfatiza la expresividad de la programación más allá de los paradigmas funcionales y pragmáticos. Como una práctica cultural es un medio para desarrollar pensamiento crítico desde la perspectiva de las artes y las humanidades.</p>
+<p>Si vemos la práctica de programar políticamente, esta se convierte en un medio desde el cual se pueden entender las condiciones materiales y las contradicciones sociales de los procesos que se están llevando a cabo en la sociedad. En la actualidad estos procesos están fuertemente impulsados por datos. Por esta razón, en este taller busca utilizar la programación para reflexionar acerca de los procesos y paradigmas que existen en torno a la recolección y visualización de datos.</p>
+<h4 id="que-es-javascript-dot"><strong>Que es Javascript.</strong></h4>
+<p>Para comenzar, revisaremos el código mas básico posible. Este nos permitirá entender conceptos básicos de programación usando la librería <em>p5.js</em> y <em>Javascript</em>. Antes, es necesario aclarar que es <em>Javascript</em> y <em>p5.js</em>.</p>
+<p><em>Javascript</em> es un lenguage de programación de alto nivel y una de las tecnologías claves del internet junto a html o <em><a href="https://en.wikipedia.org/wiki/HTML">Hypertext Markup Language</a></em> y css o <em><a href="https://en.wikipedia.org/wiki/CSS">Cascading Style Sheets</a></em>. El código escrito en este lenguaje es interpretado por los navegadores web como Chrome o Firefox, es decir, el código es transformado en binario, o código maquina, en tiempo real por el interprete de <em>Javascript</em> que tiene el navegador. Esta caracteristica lo hace un lenguaje muy práctico para aprender porque se pueden ver resultados de forma inmediata sin tener que instalar librerías en el computador. De hecho, como veremos más adelante, con la libreria de <em>p5.js</em> no es necesario siquiera tener un editor de texto, debido a que existe un editor web especialmente desarrollado para programar con la librería.</p>
+<figure><img src="/ox-hugo/2025-11-04_08-21-40_screenshot.png">
+</figure>
+
+<h4 id="que-es-p5-dot-js"><strong>Que es p5.js</strong></h4>
+<p><em>p5.js</em> es una librería de gráfica de <em>Javascript</em> creada por la artista <a href="https://en.wikipedia.org/wiki/Lauren_McCarthy">Lauren McCarthy</a> en el año 2014 con el propósito de crear una plataforma de programación para la creación artística y proyectos educacionales. <em>p5.js</em> fue diseñado para facilitar mucho comenzar a programar sistemas gráficos e interactivos. Esto se debe a dos razones:</p>
+<ul>
+<li>Primero, porque incluye una infraestructura de código que nos permite dibujar una gráfica en la pantalla, interactuar con el ratón, con cámaras y la web entre otros. Esto permite la obtención de resultados de forma rápida.</li>
+<li>Segundo, porque nos permite programar sin instalar nada en nuestros computadores debido a que tiene un editor de código online. Esto permite además no tener que interactuar o desplegar nuestro programa en servidores web.</li>
+</ul>
+<p>Todos estos conceptos y otros, los iremos descubriendo y entendiendo a medida que avancemos en los ejemplos.</p>
+<figure><img src="/ox-hugo/2025-11-04_08-19-55_screenshot.png">
+</figure>
+
+<h4 id="entorno-de-desarrollo-integrado--ide"><strong>Entorno de desarrollo Integrado (IDE)</strong></h4>
+<p>Comencemos a visitar la pagina del <a href="https://editor.p5js.org/">editor web</a> de <em>p5.js</em>. No es necesario hacer una cuenta de usuario, pero es recomendado para poder guardar y compartir nuestros proyectos. La ventaja de usar esta herramienta es que no tenemos que hacer correr un servidor web, el cual es necesario para usar imágenes, vídeos u otra clase de archivos si trabajamos de forma local en nuestros computadores. Si quieren ocupar <em>p5.js</em> de manera local, la forma mas fácil es descargar <em><a href="https://processing.org/download">Processing</a></em>, el cual tiene incorporado un pequeño servidor web para usarlo localmente.</p>
+<p>En el ambiente de trabajo de <em>Processing</em> se tiene que cambiar del modo de <em>Java</em> a <em>p5.js</em>.  Recomiendo que bajen este programa porque podrán ver ejemplos. Además, no necesitan tener conexión a internet para trabajar. Sin embargo, en el taller usaremos el editor online, porque tendremos acceso inmediato a los programas que desarrollaremos desde el teléfono.</p>
+<h4 id="partes-de-la-ide"><strong>Partes de la IDE</strong></h4>
+<p>Describiremos rapidamente las partes del editor de <em>p5.js</em>. Aunque no sean exactamente iguales, de igual forma esta explicación sirve para <em>Processing</em> debido a que los espacios coinciden. En la figura podemos ver las partes que componen el ambiente de trabajo web de p5.js. El ambiente de trabajo de Processing tienen las mismas partes.</p>
+<figure><img src="/ox-hugo/2025-06-15_09-58-15_screenshot.png"
+    alt="Figure 1: Ambiente de trabajo del editor web de p5.js"><figcaption>
+      <p><span class="figure-number">Figure 1: </span>Ambiente de trabajo del editor web de p5.js</p>
+    </figcaption>
+</figure>
+
+<p>A la izquierda podemos ver una lista con archivos. Después explicaremos con detalle que son cada uno de estos archivos.</p>
+<figure><img src="/ox-hugo/2025-11-04_08-30-08_screenshot.png"
+    alt="Figure 2: Archivos (sketch files)"><figcaption>
+      <p><span class="figure-number">Figure 2: </span>Archivos (sketch files)</p>
+    </figcaption>
+</figure>
+
+<p>En medio de la IDE, se encuentra el editor de texto, en donde escribiremos nuestro código o <em>sketches</em>.</p>
+<figure><img src="/ox-hugo/2025-11-04_08-32-07_screenshot.png"
+    alt="Figure 3: Editor de texto (sketch)"><figcaption>
+      <p><span class="figure-number">Figure 3: </span>Editor de texto (sketch)</p>
+    </figcaption>
+</figure>
+
+<p>A la derecha encontramos el <em>preview</em> en donde se dibujaran nuestro canvas y los objetos gráficos que programaremos. En otras palabras, es donde corre nuestro porgrama.</p>
+<figure><img src="/ox-hugo/2025-11-04_08-33-35_screenshot.png"
+    alt="Figure 4: Canvas (preview)"><figcaption>
+      <p><span class="figure-number">Figure 4: </span>Canvas (preview)</p>
+    </figcaption>
+</figure>
+
+<p>Finalmente, abajo del editor de código, podemos ver un espacio con nombre <code>console</code> en el cual el interprete del código se comunica con nosotros cuando existen errores, advertencias o cuando nosotros queremos saber algo que nos permita ver el funcionamiento de nuestro programa.</p>
+<figure><img src="/ox-hugo/2025-11-04_08-35-12_screenshot.png"
+    alt="Figure 5: Consola (console)"><figcaption>
+      <p><span class="figure-number">Figure 5: </span>Consola (console)</p>
+    </figcaption>
+</figure>
+
+<h4 id="hello-world"><strong>Hello, World!</strong></h4>
+<p>Comencemos con el ejemplo mas básico usado en la enseñanza de programación, el programa &ldquo;Hello, World!&rdquo; que nos da la bienvenida al mundo de la programación.</p>
+<p>Con este ejemplo, que nos sirve como introducción a p5.js y javascript, cubriremos los fundamentales del lenguaje y la librería, como la creación de formas básicas y texto, los modelos de color y opacidad, así como también las listas de datos y objetos.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">600</span>, <span style="color:#ae81ff">500</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">150</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// background(100);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">text</span>(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="partes-del-programa-dot-funciones-setup-y-draw"><strong>Partes del Programa. Funciones setup y draw</strong></h4>
+<p>Podemos ver que en el <em>sketch</em> &ldquo;Hello World!&rdquo; existen dos bloques de código que comienzan con la palabra <code>function</code>, segudo por las palabras <code>setup</code> y <code>draw</code>.</p>
+<p>Cada uno de estos bloques son lo que se llama funciones. ¿Que es una función?. Una función en Javascript es un bloque de código designado para realizar una tarea o varias tareas. Mas adelante vamos a ver las funciones con mas detalle, pero por ahora me gustaria hablar en específico de estas dos funciones <code>setup()</code> y <code>draw()</code>. En nuestro sketch &ldquo;Hello World!&rdquo; y en la mayoría de los sketchs de p5 se cumple la siguiente regla, a menos que en nuestro código digamos lo contrario:</p>
+<p><strong>el código que se encuentra dentro de la función <code>setup()</code> se ejecuta sólo una única vez al principio de la ejecución del programa, mientras que la función <code>draw()</code> es llamada o ejecutada cada cuadro por segundo, generalmente 60 veces por segundo mientras el programa esta corriendo. Entonces como regla, en la función <code>setup()</code> se definen las características del programa que no varían en el tiempo.</strong></p>
+<p>En nuestro ejemplo, dentro de esta función <code>setup()</code> podemos ver la función <code>createCanvas</code> que tienen dos parámetros de entrada, el ancho y el alto de nuestro canvas en el cual dibujaremos. En este caso es 500 pixeles de ancho por 500 pixeles de alto. Las dimensiones de nuestro canvas no variaran mientras el programa esté funcionando, debido a esto lo definimos en nuestra función <code>setup()</code>.</p>
+<p>La funcion <code>Background</code> tienen como entrada 4 valores que refieren a Red, Green, Blue y Alpha o transparencia (rojo, verde, azul y transparencia). Si se especifica solo un número como en el caso de nuestro ejemplo, este valor se le asigna a todos los colores por separado, en este caso es 100. Esta funcion pinta el fondo de nuestro programa, y puede ir en ambas funciones, <code>setup()</code> o <code>draw()</code> de acuerdo a si este fondo tendra variación durante la ejecución del programa o no.</p>
+<p>En la funcion <code>draw()</code> encontramos la funcion <code>ellipse</code>. Esta funcion dibuja una ellipse en nuestro canvas y tienen 4 argumentos. Estos son la coordinada <code>x</code> e <code>y</code> que definen la posición de la elipse en el canvas, y su ancho y altura en píxeles. Si nos fijamos la coordinada <code>x</code> e <code>y</code> que tienen el valor 200.</p>
+<p>Por ultimo encontramos la funcion <code>text</code> cuya funcion es dibujar texto en nuestro canvas y tienen como argumento un texto o <em>string</em>, o cadena en español, nombre que refiere a que una palabra es una cadena de caracteres. Los <code>string</code>  tienen que ir entre comillas sino es evaluado como código y arrojará un error. El segundo y tercer argumento de la funcion son las coordenadas en donde se dibujara el texto.</p>
+<h4 id="caracteristicas-del-programa"><strong>Caracteristicas del programa</strong></h4>
+<p>De este ejemplo hay tres características y elementos de p5 y otras librerías o frameworks de programación creativa que es necesario conocer. Estas son el sistema de coordenadas, el orden de ejecucion, y las variables.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p><strong>Coordinadas</strong></p>
+<p>Primero, las coordinadas del canvas comienzas en la esquina izquierda de arriba, es decir el 0, 0 del canvas es en la esquina superrior izquierda de canvas. podemos ver las coodenas del texto y las coordenadas de la elipse.</p>
+<figure><img src="/ox-hugo/2025-11-04_09-22-40_screenshot.png"
+        alt="Figure 6: Sistema de Coordenadas"><figcaption>
+          <p><span class="figure-number">Figure 6: </span>Sistema de Coordenadas</p>
+        </figcaption>
+    </figure>
+
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p><strong>Orden de ejecución</strong></p>
+<p>Lo segundo es respecto al orden de ejecución. En los lenguaces de programación cada linea de código es interpretada secuencialmente. Las líneas se define usando un semi-colon (punto y coma) que indica al interprete el termino de una linea.</p>
+<p>Cada linea es ejecutada en un orden de arriba hacia abajo, esto determina entonces que elementos se dibujan sobre otros elementos. Para visualizar graficamente el orden de ejecucion agregaremos al programa un rectangulo con un tamaño de 300 x 300 pixeles. Para resumir veamos como se comporta dibujar un circulo y un cuadrado. Si el cuadrado esta en una linea anterior que el circulo, en el canvas este se encontrará dejabo del circulo.</p>
+<pre tabindex="0"><code class="language-javascrip" data-lang="javascrip">rect(100, 100, 300, 300);
+ellipse(100, 100, 200, 200);
+</code></pre><figure><img src="/ox-hugo/2025-11-04_09-25-44_screenshot.png"
+        alt="Figure 7: Render del bloque de código anterior en donde la línea de código que declara a la elipse se encuentra en una línea posterior a la del rectangulo."><figcaption>
+          <p><span class="figure-number">Figure 7: </span>Render del bloque de código anterior en donde la línea de código que declara a la elipse se encuentra en una línea posterior a la del rectangulo.</p>
+        </figcaption>
+    </figure>
+
+<p>Lo contrario ocurre si estas lineas se intercambian en su posición.</p>
+<pre tabindex="0"><code class="language-javascrip" data-lang="javascrip">ellipse(100, 100, 200, 200);
+rect(100, 100, 300, 300);
+</code></pre><figure><img src="/ox-hugo/2025-11-04_09-28-06_screenshot.png"
+        alt="Figure 8: Render del bloque de código anterior en donde la línea de código que declara al rectangulo se encuentra en una línea posterior a la de la elipse."><figcaption>
+          <p><span class="figure-number">Figure 8: </span>Render del bloque de código anterior en donde la línea de código que declara al rectangulo se encuentra en una línea posterior a la de la elipse.</p>
+        </figcaption>
+    </figure>
+
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p><strong>Consecuencias posición método <em>background</em> en el código</strong></p>
+<p>El órden de ejecución tambien tiene otras implicaciones. Modificaremos el código anterior para visualizarlas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">600</span>, <span style="color:#ae81ff">500</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">150</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">text</span>(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">mouseX</span>, <span style="color:#a6e22e">mouseY</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Vamos a sacar el rectángulo y en la elipse reemplazaremos los valores de as coordenadas <code>x</code> e <code>y</code> por los métodos <code>mouseX</code> y <code>mouseY</code> . Estos métodos son funciones, que vienen incluidas en la librería p5.js, entregan la posición <code>X</code> e <code>Y</code> del puntero del mouse. Al reemplazar las coordenadas estáticas por estas funciones, podemos mover la elipse en nuestro canvas. Como la elipse se encuentra en la funcion <code>draw()</code>, se dibuja una elipse cada cuadro por segundo mientras dure la ejecución del programa, en la posición en donde se encuentra el puntero del ratón.</p>
+<p>Si hacemos correr el programa veremos como se dibuja una elipse cada cuadro. Si observamos bien, veremos que la elipse del último cuadro se dibuja sobre las elipses dibujadas anteriormente. Por otro lado, si detenemos el mouse con la elipse sobre el texto, se ve solo la elipse. Sin embargo, si movemos la elipse a otro lado, el texto vuelve a aparecer, esto es debido a que un nuevo cuadro ha sido dibujado, y el texto se dibuja en cada cuadro.</p>
+<figure><img src="/ox-hugo/2025-11-04_09-42-52_screenshot.png"
+        alt="Figure 9: Render cuando el método Background se encuentra en la función setup()."><figcaption>
+          <p><span class="figure-number">Figure 9: </span>Render cuando el método <code>Background</code> se encuentra en la función <code>setup()</code>.</p>
+        </figcaption>
+    </figure>
+
+<p>Me gustaría que veamos que pasa si en el programa cambiamos la función <code>Background</code> desde la función <code>setup()</code> a la función <code>draw()</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">600</span>, <span style="color:#ae81ff">500</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">text</span>(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">mouseX</span>, <span style="color:#a6e22e">mouseY</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Si tenemos en cuenta el orden de ejecución, podemos ver que como la función <code>Background()</code> esta antes de la función <code>Ellipse()</code>, esta limpia el canvas cada cuadro con el color de fondo, borrando del canvas la ellipse dibujada en el cuadro anterior. Este es un concepto muy importante porque de esta forma se produce la ilusion que es solo una elipse animada que se mueve en el tiempo. Si comentamos la función <code>Background</code> en <code>draw()</code>, vemos como todas las elipses dibujadas en la posición del puntero del mouse en cada cuadro desde que se inicio el programa.</p>
+<figure><img src="/ox-hugo/2025-11-04_09-44-31_screenshot.png"
+        alt="Figure 10: Render cuando el método Background se encuentra en la función draw(). Nótese como limpia el cuadro de la elipse dibujada en el cuadro anterior antes de dibujar la del cuadro actual."><figcaption>
+          <p><span class="figure-number">Figure 10: </span>Render cuando el método <code>Background</code> se encuentra en la función <code>draw()</code>. Nótese como limpia el cuadro de la elipse dibujada en el cuadro anterior antes de dibujar la del cuadro actual.</p>
+        </figcaption>
+    </figure>
+
+</li>
+</ul>
+<h4 id="variables"><strong>Variables</strong></h4>
+<p>Por último, es importante que aprendamos que es una variable y como estas se relacionan con las funciones. Particularmente, por ahora, con las funciones <code>setup()</code> y <code>draw()</code>.</p>
+<p>Antes que nada es necesario definir que es una variable. En programación, una variable es un <strong>contenedor que guarda datos</strong>. Estos datos <strong>pueden cambiar (ser variables) o ser constantes</strong>. Una variable puede guardar varios <strong>tipos</strong> de datos, y dependiendo de esto, usa una cantidad especifica de memoria en el computador.</p>
+<p>Javascript es un <strong>lenguaje dinámico</strong>, esto quiere decir que no se tiene que indicar o declarar explicitamente el tipo de variable que un identificador o nombre de variable guarda. Esta tarea la realiza el interprete automáticamente, que s el navegador en este caso.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p><strong>Reglas para el uso de variables y formas de declaración</strong></p>
+<p>Asumiendo que usamos navegadores modernos, las variables de declaran  usando <code>let</code> y <code>const</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">miVariable</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">miVariable</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;palabra&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">miVariable</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span></code></pre></div><p><code>let</code> se usa cuando el valor que contienen la variable cambia durante la ejecución del código, y <code>const</code>  se usa cuando el valor definido es constante durante toda la ejecución del programa.</p>
+<p>Las reglas para usar estos tipos de variable son las siguiente:</p>
+<ol>
+<li>
+<p>Siempre declaren las variables.</p>
+</li>
+<li>
+<p>Usar <code>const</code> si el valor no cambia.</p>
+</li>
+<li>
+<p>Usar <code>const</code> si el tipo de valor de la variable no cambia. Esto es importante, debido a que javascript es un lenguage dinamico, una misma variable puede ser un numero entero y despues contener un texto o caracter.</p>
+</li>
+<li>
+<p>Usar let solo si no se puede usar <code>const</code>.</p>
+</li>
+</ol>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p><strong>Declaración de Variables y Relación con Funciones</strong></p>
+<p>Despues de conocer que es una variable y como se declaran, me gustaría que  entendamos las implicaciones que tiene la posición en que se declara una variable dentro del código. Para entender esto me gustaria mostrar el siguiente código:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Vemos que declaramos la variable <code>x</code> y la iniciamos con el valor <code>0</code>, dentro de la función <code>setup()</code>. Al ejecutar el programa nos muestra que el valor de la variable <code>x</code> es 0. La funcion <code>print</code> imprime en la consola el valor que contiene la variable.</p>
+<p>Si en la linea siguiente le asignamos a la variable <code>x</code> el valor 1, la consola nos muestra que el valor de la variable <code>x</code> es 1.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Si llevamos esta línea en donde se le asigna el valor 1 a <code>x</code> a la funcion <code>draw()</code>, dejando la función <code>print</code> en la funcion <code>setup()</code> la consola arroja que el valor de la variable <code>x</code> es 0;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Ahora, movemos la funcion <code>print</code> a la funcion <code>draw()</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Cuando ejecutamos el código obtenemos el siguiente error:</p>
+<p><code>[sketch.js, line 12] &quot;x&quot; is not defined in the current scope</code>.</p>
+<p>¿que ocurre? ¿que nos esta diciendo la consola?</p>
+<p>Esto se debe a que lo que se declara al interior de una funcion es valido sólo válido dentro de la función. Esto se debe a que <code>x</code> fue declarada localmente dentro de la función.</p>
+<p>Entonces, podriamos pensar  que al declarar la variable <code>x</code> dentro de la funcion <code>draw()</code>, podriamos evitar el error. Esto es correcto, sin embargo esto tienen otras implicaciones.  Debido a que la fncion <code>draw()</code> es ejecutada cada cuadro por segundo la variable volveria a tener un valor 0 cada cuadro. En este ejemplo, esto no tiene mucha importancia, pero tiene implicaciones inmensas si queremos crear arte generativo por ejemplo.</p>
+<p>Antes de ver estas implicaciones, es necesario definir que <strong>para que todas las funciones del programa reconozcan una variable, esta se tiene que definir fuera de las funciones. Lo que se llama declarar la variable <em>globalmente</em>, o declarar la variable de forma global</strong>.</p>
+<p>De esta forma, para evitar el error de la variable no declarada y al mismo tiempo la inconsistencia del contante retorno de la variable a su valor inicial, nuestro código quedaría de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p><strong>Mi Primera Animación</strong></p>
+<p>El hecho que la funcion <code>draw()</code> se ejecute cada cuadro, ademas de la declaración global de una variable, nos permite animar la posición de una elipse usando sólo una variable. Si declaramos una variable <code>x</code> globalmente, podemos sumarle uno cada cuadro por segundo. Si esa variable la utilizamos como parámetro de la coordenada <code>x</code> de una elipse, la elipse se movera en el eje <code>x</code>.</p>
+<p>El código final seria el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ellipse</span>(<span style="color:#ae81ff">200</span>, <span style="color:#a6e22e">x</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Por último, podemos poner un condicional <code>if</code> para que la variable no sobrepase el ancho de nuestro canvas, para lo cual usamos otra variable de tipo <code>booleana</code> que solo tiene dos estados verdad (true) o falso (false), y tres condicionales. Le decimos que si el valor de x es igual al ancho de nuestro canvas - 5, este ultimo valor corresponde al radio de nuestra elipse, la variable b cambia de estado a <code>true</code> y consecuentemente a <code>x</code> le restamos 1, si es igual al radio de nuestra elipse, es decir 5, la variable b cambia de estado a false y consecuentemente a la variable <code>x</code> le sumamos 1. Así, hemos hecho nuestra primera animación.</p>
+<p>El código final seria el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">width</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">5</span>) <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>) <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">b</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">x</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">x</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">x</span>, <span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="contenedor-array-o-lista"><strong>Contenedor Array o Lista</strong></h4>
+<p>Ahora vamos a ver un objeto muy importante en todos los lenguajes de programación porque nos sirve para guardar variables de un mismo tipo de forma secuencial, en un solo contenedor.</p>
+<p>Una lista o <code>array</code> almacena datos o variables ordenadamente. Las listas son útiles para almacenar datos que estan relacionados. Pueden contener datos de cualquier tipo, colores favoritos, palabras, o números entre otros.</p>
+<p>Las listas se crean de la siguiente manera:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">miLista</span> <span style="color:#f92672">=</span> []; <span style="color:#75715e">//creación lista vacía
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">miLista</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">70</span>]; <span style="color:#75715e">//creación lista con tres elementos
+</span></span></span></code></pre></div><p>A los datos de un <code>array</code> se les llama elementos. Cada elemento tiene una dirección, o índice, dentro del <code>array</code> o lista. El índice hace referencia a los elementos del <code>array</code>, <code>10</code>, <code>40</code>, y <code>70</code>. Los índices de los <code>array</code>, parten siempre desde cero, lo que significa que  el elemento de valor <code>10</code> de nuestro <code>array</code> está en el índice 0, el de valor <code>40</code> está en el índice 1, y <code>70</code> está en el índice 2. Los elementos de los <code>array</code> pueden ser accedidos utilizando sus índices de la siguiente manera:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">primerElemento</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">miLista</span>[<span style="color:#ae81ff">0</span>]; <span style="color:#75715e">// el resultado será 10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">segundoElemento</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">miLista</span>[<span style="color:#ae81ff">1</span>]; <span style="color:#75715e">// el resultado será 40
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tercerElemento</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">miLista</span>[<span style="color:#ae81ff">2</span>]; <span style="color:#75715e">// el resultado será 70
+</span></span></span></code></pre></div><p>Se pueden agregar elementos al <code>array</code> con el método <code>push()</code>, de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">miLista</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">cuartoElemento</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">myArray</span>[<span style="color:#ae81ff">3</span>]; <span style="color:#75715e">// el resultado será 100
+</span></span></span></code></pre></div><h4 id="nuestro-programa-con-listas"><strong>Nuestro programa con Listas</strong></h4>
+<p>Veamos nuestro programa anterior y usemos listas para hacer mas de una elipse.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">xCoordenadas</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">yCoordenadas</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xCoordenadas</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">random</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">width</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">yCoordenadas</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">random</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">height</span>));
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">xCoordenadas</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span>  <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)  {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">xCoordenadas</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">yCoordenadas</span>[<span style="color:#a6e22e">i</span>], <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Comenzamos declarando globalmente dos listas o <code>array</code>, una para guardar la coordenada <code>x</code> y otra para la coordenada <code>y</code> de las elipses.</p>
+<p>En la función <code>setup</code>, nos encontramos con algo nuevo, que es  <code>for</code>, que produce un bucle. En la declaración de este bucle existen tres expresiones encerradas en paréntesis y separadas por puntos y comas, seguidas una secuencia de código encerrado entre llaves.</p>
+<h4 id="bucle-for"><strong>bucle for</strong></h4>
+<p>La sintaxis es la siguiente:</p>
+<p><code>for ([expresion-inicial]; [condicion]; [expresion-final])sentencia</code></p>
+<p>En lenguaje español simple y usando nuestro código de las elipses, sería más o menos lo siguiente: Para una variable <code>i=0</code> mientras <code>i</code> sea menor que el tamaño o &ldquo;largo&rdquo; (length) de la lista <code>xCoordenadas</code>, le sumamos <code>1</code> a <code>i</code>. Esto quiere decir que el código que esta entre las llaves se va a ejecutar repetidamente hasta que <code>i</code> sea igual al tamaño de la lista.</p>
+<p>De esta forma, en la funcion <code>setup</code>, introducimos un valor usando el metodo <code>push</code> al azar usando la funcion <code>random</code>, cuyo valor sera entre <code>0</code> y el ancho del canvas (<code>width</code>) para <code>xCoordenadas</code>, y el alto del canvas (<code>heigth</code>), para <code>yCoordenadas</code>.</p>
+<p>En la función <code>draw</code> nuevamente usamos el bucle <code>for</code>, pero esta vez usamos el valor de <code>i</code> como un índice para obtener los valores de cada lista. Si nos fijamos bien, el bucle termina cuando alcanza el valor del tamaño de una de nuestras listas. Puede ser cualquiera de las dos porque ambas tienen igual tamaño.</p>
+<p>Los valores que obtenemos los agregamos en las coordenadas <code>x</code> e <code>y</code> de las elipses que dibujaremos en el canvas.</p>
+<p>Sin embargo, nuestras elipses no se mueven porque los valores de las coordenadas las generamos en la función <code>setup</code>.</p>
+<p>¿Que pasa si estos valores los generamos en la función <code>draw</code>?</p>
+<p>el código quedaría de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">xCoordenadas</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">yCoordenadas</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">xCoordenadas</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">random</span>(<span style="color:#a6e22e">width</span>));
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">yCoordenadas</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">random</span>(<span style="color:#a6e22e">width</span>));
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">xCoordenadas</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>)  {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">xCoordenadas</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">yCoordenadas</span>[<span style="color:#a6e22e">i</span>], <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>El resultado es que vemos como las elipses se van dibujando una arriba de la otra cada cuadro por segundo. Pero ¿porque?, no tenemos acaso la función <code>background</code>, limpiando en canvas antes de dibujar las elipses en cada cuadro?</p>
+<p>Si, <code>background</code> esta limpiando el canvas cada cuadro. Algo pasa con nuestras listas o <code>array</code>. Esto es debido a que el metodo <code>push</code>, no reescribe los elementos de los <code>array</code>, sino que agrega 100 elementos cada cuadro. Esto es peligroso porque nuestra lista esta creciento 100 elementos 60 veces por segundo y eventualmente va a llenar nuestra memoria del computador. Para solucioar esto debemos limpiar nuestros <code>array</code> cada cuadro despues o antes que sean agregados los proximos 100 elementos. Esto lo hacemos asignando a cada lista una lista vacía de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">xCoordenadas</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">yCoordenadas</span> <span style="color:#f92672">=</span> [];
+</span></span></code></pre></div><p>el código final tiene la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">xCoordenadas</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">yCoordenadas</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xCoordenadas</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">random</span>(<span style="color:#a6e22e">width</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">yCoordenadas</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">random</span>(<span style="color:#a6e22e">width</span>));
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">xCoordenadas</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>)  {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">xCoordenadas</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">yCoordenadas</span>[<span style="color:#a6e22e">i</span>], <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">xCoordenadas</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">yCoordenadas</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="classes"><strong>Classes</strong></h4>
+<p>Nuestro código anterior presenta un problema. Tendremos que hacer diferentes listas para cada uno de los parametros que queramos modificar en cada una de las elipse que dibujemos.  Dicho esto, si quisieramos cambiar el tamaño de cada elipse tendriamos que crear dos listas mas. Esto no es muy ordenado, particularmente porque estos valores estan asociados a un mismo objeto, repetido muchas veces. He aqui donde entran las <code>classes</code>.</p>
+<p>¿que es un clase?</p>
+<p>Las <code>classes</code> son plantillas para la creación de objetos. Las clases pueden encapsular diversos datos y son usadas para trabajar con datos. Debido a esto es importante que las entendamos, porque en la segunda parte de este taller vamos a recolectar datos desde la internet para guardarlos, y el uso de clases nos facilitara esta tarea enormemente. Considerando nuestro código anterior, usando clases, declaramos una clase con nombre <code>Elipse</code> de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Elipse</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">xCoordenada</span>, <span style="color:#a6e22e">yCoordenada</span>, <span style="color:#a6e22e">xPosicion</span>, <span style="color:#a6e22e">yPosicion</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">xCoordenada</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xCoordenada</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">yCoordenada</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">yCoordenada</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">xPosicion</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xPosicion</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">yPosicion</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">yPosicion</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Vemos que la clase tienen nombre Elipse. Lo importante es que dentro de la clase existe una método especial llamado <code>constructor</code> , que es necesaria paea crear e inicializar los objetos que crearemos usando la clase. Las clases tambien pueden contener funciones que declaremos nosotros, pero para este taller ocuparemos la clase solo como contenedor para asociar datos.</p>
+<p>Entonces ¿como quedaría nuestro código anterior?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">Elipses</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Elipse</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">xCoordenada</span>, <span style="color:#a6e22e">yCoordenada</span>, <span style="color:#a6e22e">xSize</span>, <span style="color:#a6e22e">ySize</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">xCoordenada</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xCoordenada</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">yCoordenada</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">yCoordenada</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">xSize</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">xSize</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ySize</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ySize</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">et</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Elipse</span>(<span style="color:#a6e22e">random</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">width</span>), <span style="color:#a6e22e">random</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">height</span>), <span style="color:#a6e22e">random</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>), <span style="color:#a6e22e">random</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Elipses</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">et</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">Elipses</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">Elipses</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">xCoordenada</span>, <span style="color:#a6e22e">Elipses</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">yCoordenada</span>, <span style="color:#a6e22e">Elipses</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">xSize</span>, <span style="color:#a6e22e">Elipses</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">ySize</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Elipses</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>El el código podemos observar que en la función <code>draw</code> creamos una variable temporal <code>et</code> para guardar una instancia de la la clase <code>Elipse</code>. Podemos ver que para crear una instancia de la clase antepones la palabra <code>new</code> y despues creamos la intancia utilizando la función <code>constructor</code> de la clase. A traves de esta función agregamos los parametros de inicialización de cada instancia de <code>Elipse</code>.</p>
+<p>Entonces, ya no tenemos que hacer varias listas para guardar cada uno de las variables que serviran para dibujar las elipses, sino solo una lista o <code>array</code> para guardar las 100 instancias de la clase <code>Elipse</code> que creamos.</p>
+<p>El el bucle siguiente podemos ver como accedemos a cada miembro de la instancia usando el signo punto.</p>
+<h4 id="referencias"><strong>Referencias</strong></h4>
+<p>Para mayor información acerca de estas y otras funciones y metodos existe una pagina de referencia:
+<a href="https://p5js.org/reference/">https://p5js.org/reference/</a></p>
+<p>Por otro lado les recomendaria activar la herramienta de auto-complete en los settings del p5.js web IDE debido a que por un lado tenemos que escribir menos, pero aun mas im portante nos muestra las posibles funciones y metodos que queramos usar.</p>
+<h4 id="ejercicios-y-final-del-taller"><strong>Ejercicios y Final del Taller</strong></h4>
+<p>Acá terminamos con lo mas básico de p5.js y Javascript. Ha sido un poco arido y no muy creativo pero es importante que aprendamos lo basico antes de seguir. Seguiremos aprendiendo otros conceptos acerca del lenguaje y la librería en las próximos partes del taller. A continuación pasaremos a ver las formas que tenemos de almacenar datos, y que tipo de datos.</p>
+<h3 id="p02-data-psicogeografías">P02: Data-Psicogeografías</h3>
+<h4 id="práctica-especulativa-de-datos">Práctica especulativa de datos</h4>
+<p>Antes de comenzar a ver elementos de programación mas avanzada vamos a definir el ejercicio que es la columna vertebral del taller. Para esto definiremos dos practicas, la practicas contemporáneas que orbitan alrededor de los datos y la practica critica y creativa histórica de la psicogeografía.</p>
+<p>Comenzaremos las practicas de datos para definir una nueva forma de pensarlos, y en particular, definir a que nis referimos con el termino dato en este taller.</p>
+<h4 id="paradigmas-dominantes-del-uso-de-datos-dot">Paradigmas dominantes del uso de datos.</h4>
+<p>En nuestra sociedad contemporánea, los datos son una forma de poder. Por un lado, han sido usada para visualizar injusticias, mejorar pronósticos médicos o mejorar políticas públicas entre muchos otros, al mismo tiempo que han sido usados para discriminar, para la aplicación de metidos coersivos y acciones policiales enfocados en territorios o grupos específicos.</p>
+<p>Esta dualidad hace esencial que nos preguntemos acerca de quien hace la ciencia de datos, para quien se recopilan y manipulan los datos, y por último, para los intereses de quien estos datos usados.</p>
+<p>Catherine D&rsquo;Ignazio and Lauren Klein (data feminism) notan que las narrativas en torno a la &ldquo;big data&rdquo; y la ciencia de datos son particularmente centradas en la figura de un hombre blanco tecno-heroico, los cuales definen las jerarquias en los sistemas de clasificación de datos.</p>
+<p>Estas autoras se preguntan como las emociones pueden expandir nuestras ideas acerca de la práctica con datos para producir vizualizaciones afectivas, y de esta forma hacer de esta práctica un proceso que nos ayude a descubrir y entender por nosotros mismos que los datos nunca hablan pos si mismos.</p>
+<p>Inspirados por estas problematicas, en el taller vamos a intentar no solo visualizar data que logre efectos fuera de los paradigmas dominantes en la ciencia de datos, sino que además buscamos una práctica que involucre datos especulativos y cualitativos como una forma de expandir nuestra comprensión acerca de los datos y cuestionar el uso de datos unicamente con motivos prácticos, productivos o para maximizar procesos individuales.</p>
+<h4 id="ejemplo-strava">Ejemplo Strava</h4>
+<p>A modo de ejemplo concreto, que me sirve para introducir las practicas psicogeograficas en relacion a los datos, me gustaria relatar una experiencia individual, y ver como los datos afectan nuestra experiencia.</p>
+<p>Me gusta andar en bicicleta. He rodado desde hace alrededor de 20 años. En un momento específico, iba todos los días al trabajo en bicicleta.  Para seguir mis viajes, comencé a ocupar la aplicación <em>Strava</em>. Esta aplicación utiliza el GPS del teléfono para registrar la distancia recorrida,  la velosidad promedio, la velocidad máxima alcanzada, la potencia medida en watts calculada de acuerdo a la edad y el peso, y la altura escalada de cada viaje entre otros. Estos datos se pueden visualizar en el tiempo, y como todos los días hacia el mismo recorrido comencé a hacer la ruta en menos tiempo, o alcanzar velocidades máximas mas altas, o llegar a una velocidad promedio mayor. De esta forma, mis otrora tranquilos paseos en bicicleta al trabajo se transformaron obsesivamente en un momento de competición conmigo mismo.</p>
+<p>Sin embargo, <em>Strava</em> llega aún mas lejos, debido a que los usuarios pueden hacer segmentos en la ruta, en los cuales todos los usuarios que pasan por ese segmento compiten entre ellos. Así es que ya no era solo mejorar mi velocidad, sino que además obtener <em>KOMs</em> o <em>King of the Mountain</em>, el rey de la montaña en la mayor cantidad de segmentos posible. Perdón por la historia, pero es la única oportunidad que he tenido para presumir el único logro deportivo que he tenido en mi vida. De hecho aún tengo un KOM.</p>
+<p>Cuando comenzó la pandemia, nos fuimos a vivir a un entorno rural. Seguí andando en bicicleta pero de otra forma, haciendo viajes largos, explorando el ambiente, la topografía y la geografía de los lugares. Deje de usar la plataforma, y comencé a pensar en otro tipo de datos más de acuerdo a la realidad rural Chilena en que estaba inmerso. El mapa ya no estaba dividido de acuerdo a segmentos abstractos definidos por competencias virtuales, sino mas bien, de acuerdo al temor que despertaban ciertos sectores o áreas de los trayectos, en donde habían perros o el trafico era mayor. También en términos psicogeograficos, debido a que naturalmente comencé a reconocer las rutas en fragmentos, cuyas divisiones no tenían razones claras, sino mas bien sensaciones, afectos que involucraban entender el trayecto con el movimiento de las personas, los sectores productivos y la topografía que se expresaba en mis piernas.</p>
+<h4 id="lo-opuesto-a-datos-como-vehiculo-productivo">Lo opuesto a datos como vehiculo productivo</h4>
+<p>Esta experiencia muestra de forma concreta  una clara division entre el tipo de datos que promueven los paradigmas de aplicaciones comerciales y los paradigmas que queremos explorar en este taller. Aplicaciones como <em>Strava</em> nos muestran un paradigma de la prácticas de datos que se desarrolla bajo criterios productivos, de autosuficiencia, para maximizar nuestro cuerpo o trabajo. El seguimiento de datos y sus análisis permite la futura actualización de nuestras acciones y movimientos de acuerdo a un objetivo, que generalmente es bajo cánones de productividad y maximización.</p>
+<p>Es precisamente, este enfoque productivo que coarta una comprensión subjetiva y afectiva del mundo, en el cual la recolección de datos especulativos nos ayuden a formar no solo un mapa, sino que además una especie de cartografía que incluya historias, que incluyen los monstruos y maravillas del ambiente que nos rodea en relacion a nosotros que navegamos a la deriva en un mundo lleno de misterios, con el que otros puedan navegar el espacio, el cual deja de ser representado cartesianamente, sino como historias, narrativas, figuras, pensamientos&hellip;</p>
+<h4 id="introducción-psicogeografías-de-datos-psicogeografía-detournement-datos-y-visualización-dot">Introducción psicogeografías de datos - Psicogeografía, detournement, datos y visualización.</h4>
+<p>La experiencia individual que he relatado revela las paradojas de la sociedad de datos. Nos muestra el lado oculto de la promesa de automejoramiento mediante el uso de datos promovida por la industria del auto-seguimiento, esto es, la perdida de control sobre nuestros datos: nuestro esfuerzoa, nuestra velosidad, los latidos de nuestro corazon, nuestro peso, nuestro estado físico y los lugaros en los cuales circulamos entre otros.</p>
+<p>Aplicaciones como Strava son explicitas en la forma que capturan estos datos al promover la mejora de nuestro rendimiento y a competir entre nosotros, actividades que reflejan el paradigma del capitalismo tecnologico tardio que propone la tecno oligarquía; una heroica del hombre blanco.</p>
+<p>En esta parte del taller exploraremos caminos de subversión y resistencia a este paradigma. Mediante uso de herramientas de programación libre, construiremos nuestros propios sistemas para el registro de datos de forma local, que operen fuera de los aspectos normativos propuestos por la industria, es decir, que no tengan objetivos de rendimiento, competición o usabilidad técnica; que no alojen datos en las nubes de compañias de servicios con políticas de privacidad dudosas.</p>
+<p>El ejercicio particular que involucra datos y las prácticas de la psicogeografía.</p>
+<h4 id="introducción">Introducción</h4>
+<p>Me gustaría antes de ir de lleno a programar, a poner lo que vamos a hacer hoy en un contexto histórico, porque el taller en si mismo esta basado en métodos y practicas creativas que pertenecen al avant garde del siglo XX, y de alguna forma, la idea es seguir con el espíritu crítico de estas prácticas. Si vamos a hacer programación creativa y crítica, no podemos extraerla de un contexto cultural. En otras palabras es necesario conocer en que consiste la psicogeografías y cual es su contexto historico y sus métodos para poder aplicarlos usando las herramientas digitales que construyamos.</p>
+<h4 id="presentacion-situacionistas">Presentacion situacionistas</h4>
+<p>Como primer paso, nos gustaría mostrar desde donde surgieron las practicas psicogeografías para entender el contexto en que fue desarrollada y entender los alcances políticos y críticos que estas practicas tienen para tomarlas en cuenta cuando trabajemos con datos. La psicogeografía es una practica creada por un grupo de intelectuales y artistas en la década de los 50 del siglo pasado, que se asocian con el movimiento situacionista o situacionismo, cuyo planteamiento central es <em>la creación de situaciones</em>. Este grupo emergió desde una convergencia de planteamientos del marxismo y del avant-garde como la Internacional Letrista y el Movimiento para una Bauhaus Imaginista (MIBI). El miembro más famoso del grupo fue Guy Debord, quien escribió un importante texto llamado &ldquo;La Sociedad del Espectáculo&rdquo;, como también el pintor neerlandés Constant Nieuwenhuys, el escritor italo-escocés Alexander Trocchi, el historiador tunecino Mustapha Khayati, el artista inglés Ralph Rumney, el artista escandinavo Asger Jorn, el arquitecto húngaro Attila Kotanyi, la escritora francesa Michèle Bernstein, y el escritor belga Raoul Vaneigem, quien escribió un libro llamado La revolución del día a día (The Revolution of Everyday Life). De esta forma podemos ver a un grupo de artistas y pensadores radicales, que eran críticos de las normas de vida capitalista y el espectáculo en si como formas de opresión creativa. Esto es importante para pensar como la industria usa nuestros datos y como estos norman nuestra vida, por lo que al igual que los situacionistas intentaremos subvertir el uso de los datos y las representaciones de la ciudad de alparaíso  con objetivos críticos y creativos.</p>
+<h4 id="psicogeografías">Psicogeografías</h4>
+<p>Dicho lo anterior, nos preguntamos ¿que es la psicogeografía?</p>
+<p>El término psicogeografía fue inventado por el teórico marxista Guy Debord en 1955 para explorar esto. Inspirándose en el concepto de <em>flâneur</em>, la figura del  vagabundo urbano del poeta y escritor francés del siglo XIX Charles Baudelaire, Debord sugirió formas lúdicas e inventivas de navegar por el entorno urbano para examinar su arquitectura y sus espacios.</p>
+<p>Como miembro fundador del movimiento de vanguardia Situacionista Internacional, un movimiento internacional de artistas, escritores y poetas que pretendían romper las barreras entre la cultura y la vida cotidiana, Debord quería un enfoque revolucionario de la arquitectura que fuera menos funcional y más abierto a la exploración.</p>
+<p>La psicogeografía es la exploración de entornos urbanos que enfatiza las conexiones interpersonales con lugares y rutas arbitrarias. La psicogeografía se enfoca en explorar las relaciones emocionales y psicológicas entre las personas y los lugares, y busca desafiar la visión tradicional de la ciudad como un espacio neutro y objetivo. En lugar de eso, la psicogeografía busca revelar las complejidades y las emociones que se encuentran detrás de la apariencia de la ciudad. La psicogeografía es una herramienta para entender y experimentar la ciudad de manera más profunda y personal, y para cuestionar las relaciones de poder y la identidad que se encuentran en la ciudad.</p>
+<p>La reinvención de la ciudad propuesta por la psicogeografía tiene sus raíces en el dadaísmo y el surrealismo. La psicogeografía ganó popularidad en la década de 1990, cuando artistas, escritores y cineastas como Iain Sinclair y Patrick Keiller comenzaron a utilizar la idea para crear obras basadas en la exploración de lugares caminando. Se puede observar la influencia psicogeografia en la película de Patrick Keller <em>London</em>.</p>
+<p>En el taller se usaran las herramientas digitales credas por nosotros mismos, diseñadas para capturar los datos e historias que cada participante considere relevante no solo para entender las practicos de datos de forma critica, sino que ademas para entender el espacio urbano de forma critica. Como resultado construiremos una representacion psicogeográfica web del espacio urbano que contenga la diversa data capturada con sus multiples visualizaciones.</p>
+<p>En 1955, Guy Debord definió la psicogeografía como &ldquo;el estudio de las leyes precisas y los efectos específicos del entorno geográfico, organizado conscientemente o no, en las emociones y comportamientos de las personas&rdquo;.[4]</p>
+<h4 id="métodos-psicogeográficos-dérive">Métodos psicogeográficos - dérive</h4>
+<p>Uno de los tácticas, técticas o métodos claves para explorar la psicogeografía es la caminata urbana sin rumbo específico lo que fue conocida como el <em>dérive</em>.</p>
+<p>La <em>dérive</em> es una práctica de caminata urbana que implica dejarse llevar por la ciudad sin tener un destino previsto. Es una forma de exploración urbana y lugares ocultos que busca desafiar la visión tradicional de la ciudad y revelar las complejidades y emociones que se encuentran detrás de la apariencia de la ciudad</p>
+<p><a href="https://libcom.org/article/theory-derive-guy-debord">Theory of the Dérive - Guy Debord</a></p>
+<p>Guy Debord en su ensayo &ldquo;La teoría de la Deriva&rdquo;, define la deriva es una técnica que consiste en pasar rápidamente por ambientes variados. Esta implica adoptar un comportamiento constructivo y juguetón, y tener conciencia de efectos psicogeográficos de los ambientes que son atravesados.</p>
+<p>Debord define a la deriva más allá de las nociones clásicas de viaje o paseo, porque para dejarse atraer o repeler por los ambientes que se cruzan, para capturar las corrientes constantes, los puntos fijos y torbellinos que fuertemente desaconsejan la entrada o salida de ciertas zonas, es necesario abandonar las relaciones que establece el moverse por motivos usuales como por trabajo u ocio.</p>
+<p>Debord nota que la ciencia ecológica proporciona a la psicogeografía abundante datos. El análisis ecológico del carácter absoluto o relativo de las fisuras en la red urbana, del papel de los microclimas, de los barrios distintos sin relación con los límites administrativos, y sobre todo de la acción dominante de los centros de atracción, debe ser utilizado y completado con métodos psicogeográficos. El terreno objetivamente pasional de la dérive debe ser definido en conformidad con su propia lógica y con sus relaciones con la morfología social.</p>
+<figure><img src="/ox-hugo/2025-10-27_23-59-20_screenshot.png">
+</figure>
+
+<h4 id="detournement">Detournement</h4>
+<p>El segundo método de la psicogeografía implica la técnica del <em><a href="#org-target--1">Détournement</a></em> para la creación de informes y mapas auto-publicados.</p>
+<p>El <em>detournement</em> es la práctica de tomar elementos pre-existentes, como palabras, imágenes o ideas entre otros, y subvertirlos para crear algo nuevo.  Cualquier elemento, sin importar de dónde se tome, puede servir para formar nuevas combinaciones. La idea es que independientemente del contexto original de estos objetos, siempre se forma una relación que supera las expresiones independientes de los elementos originales.</p>
+<p>Los elementos del <em>Détournement</em> pueden ser elementos sin importancia que obtienen toda su significación del nuevo contexto en el que ha sido colocado, o elementos intrínsecamente significativos que derivan en un ámbito diferente en el nuevo contexto. Es decir pueden ser desde un recorte de prensa, una frase neutral o una fotografia común, hasta partes de obras de arte o peliculas. Lo importante para que sea efectivo, según Debord, es que su relación no se acerque a una respuesta racional.</p>
+<p>Los objetos resultantes de la tecnica de detournement son objetos de escritura metagrafica que contiene texto, elementos gráficos e imágenes, que apuntan a la vida cotidiana no solo mediante el lenguaje sino que tambien en los gestos, en la ropa, en el modo de disponer las cosas, de beber, de citar poesía, en el lenguaje secreto, en las contraseñas. En general el détournement es inseparable de una tendencia hacia el juego y la construccion de situaciones, cuyo objetivo último subvertir las normas y las expectativas de la ciudad</p>
+<p>En la lámina podemos ver <em>La Guide Psychogeographique de Paris</em>, realizada por Guy Debord en 1957 Este es el primer mapa psicogeográfico situacionista. Se puede ver como la representación cartográfica de la urbe es sustituida por el intento de representar las sensaciones producidas por la psicogeografía en los trayectos urbanos.</p>
+<p>El mapa es hecho de fragmentos que flotan como icebergs en el vacio de la pagina en blanco. Estos fragmentos cartográficos de París son conectados por  posibles trayectorias sugeridas mediante flechas rojas multidireccionales. Tanto por su fragmentación como por el dinamismo que las flechas sugieren que la ciudad esta atrapada en una tensión irresoluble entre la integración y la desintegración total. Esta es impedida por la potencialidad que trae consigo el caminante a la deriva, dispuesto a perderse y a dotar de sentido parcial a un París al borde del desmembramiento.</p>
+<figure><img src="presentacion/ImagenesPresentacion/Liberatelondon.GIF"
+    alt="Figure 11: La psicogeografía implica informes y mapas auto-publicados, utilizando la técnica Situationista del detournement - utilizando elementos pre-encuentrados y subvirtiéndolos. evoL PsychogeogrAphix 2003."><figcaption>
+      <p><span class="figure-number">Figure 11: </span>La psicogeografía implica informes y mapas auto-publicados, utilizando la técnica Situationista del detournement - utilizando elementos pre-encuentrados y subvirtiéndolos. <em>evoL PsychogeogrAphix</em> 2003.</p>
+    </figcaption>
+</figure>
+
+<h4 id="memories">Memories</h4>
+<p>Otro ejemplo de la técnica del <em>detournement</em> es el libro <em>Mémoires</em> de Guy Debord y Asger Jorn. El libro es un relato experimental de las experiencias de Guy Debord que tiene dos registros o capas: por un lado ilustraciones ensamblado con material reutilizado de recortes de periódicos, fotografías, caricaturas y anuncios, y por otro lado las salpicaduras de pintura en variedad de colores como el azul, el naranja, el púrpura y el amarillo. Los colores amplían el contenido de los ensamblajes. Algunos bloques de color se abren por casualidad para revelar el texto transferido de periódicos antiguos, mientras que otros conectan pensamientos como una cuerda que atraviesa las páginas, estirándose hasta que se establece una conexión. Cómics, mapas, rostros y diagramas aparecen de forma aleatoria a lo largo de esta historia de asociaciones. En el libro aparecen fuentes tipográficas de variados estilos, siendo la tipografía times new roman la constante predecible. Las estrofas se curvan, se retuercen y se doblan en algunas páginas rompiendo el formato habitual en el que se imprime o mecaniza la escritura. En este ejemplo se puede ver claramente la técnica de detournement.</p>
+<h4 id="liberate-london">Liberate london</h4>
+<p>En la decada de los 90  y comienzos de la década de 2000 hubo una proliferación de grupos psicogeográficos que se atribuyó al resurgimiento de la Asociación Psicogeográfica de Londres.</p>
+<p>En estos ejemplos podemos ver la superimposicion de elementos y el uso decontextualizado de elementos del dia a dia como el mapa del metro de Londres.</p>
+<h4 id="máquinas-psicogeograficas">Máquinas Psicogeograficas</h4>
+<p>Habiendo definido la practica psicogeográfica de la <em>derive</em> y la técnica de <em>detournement,</em> en esta sesión del taller nos concentraremos en la <em>derivé</em>. Para ello  construiremos nuestras aplicaciones para capturan las formas en que nos afectan diferentes sectores o espacios de la ciudad en nuestras derivas. La diferencia entre las derivas de los situacionistas y las nuestras es que ahora tendremos esa impresión, imagen o sonido con las coordenadas exactas donde sucedieron.</p>
+<p>En la próxima sesión, con nuestras capturas, mas los objetos digitales que cada uno de nosotros recopile, usando la técnica del detourement, construiremos nuestro mapa psicogeográfico que no solo podrá ser visto, sino que en nuestro teléfonos las personas podrán navegar por a ciudad.</p>
+<p>El taller buscamos crear una practica de &ldquo;psicogeografía digitales&rdquo; o &ldquo;psicogeografías de datos&rdquo; que busca incluir prácticas de datos y herramientas digitales para crear una psicogeografía de la ciudad. Para esto, crearemos maquinas que nos ayuden a capturar nuestras derivas. Para esto, revisaremos objetos y APIs de javascript y p5.js como listas,  formas de guardar con gps data) para capturar impresiones, historias, imágenes y sonidos.</p>
+<h4 id="introducción-a-la-captura-de-datos-georeferenciados">Introducción a la captura de datos georeferenciados</h4>
+<p>Capturar datos requiere un planeamiento.</p>
+<p>Hay que considerar tambien que los datos nunca se mantienen fijos, por lo que son un blanco en movimiento.</p>
+<p>No hay absolutos en el mundo, y la unica informacion que se puede decidir son los caminos que se van a tomar.</p>
+<p>La mas importante parte para entender la captura de datos y la identidad de nuestros datos es identificar la pregunta que se quiere responder.</p>
+<p>Las etapas básicas de la visualización de datos son adquisición, estructuración, filtro, representación, refinación e interacción. Si bien estas etapas son lo que se proponen tradicionalmente, estas no son inamovibles, en particular su estamos hablando de programación creativa. Dicho lo anterior, en esta parte nos concentraremos en la adquisicion de datos de autoseguimiento georeferenciados.</p>
+<p>Es importante notar que todas las aplicaciones que haremos en eeste taller no hacen uso de servidores. Esto quiere decir, que a pesar de usar el navegador para hacer correr nuestros programas, estos funciona como si fueran programas locales en nuestro computador, por lo que todos los datos seran guardados en nuestros dispositivos.</p>
+<h4 id="api-de-geolocation">API de geolocation</h4>
+<p>Lo primero que vamos a ver es como podemos obtener nuestra localizacion y que tipo de datos podemos obtener. Para esto usaremos la API de geolocalización que es reconocida por nuestros navegadores de internet.</p>
+<p>Se preguntaran que es una API. Una API (Interface de Programación de Aplicaciones) es un conjunto de reglas y protocolos que permite que diferentes aplicaciones de software se comuniquen entre sí, permitiendo que intercambien datos y funcionalidad sin necesitar saber cómo funcionan internamente.</p>
+<p>La API de Geolocalización se utiliza para obtener la ubicación del usuario, y está disponible a través del objeto <code>navigator.geolocation</code>.</p>
+<p>Cuando queramos acceder el navegador nos solicitará acceso o permiso para que usemos la ubicación del dispositivo.</p>
+<h4 id="nuestro-primer-programa-de-geolocalizacion">Nuestro primer programa de geolocalizacion</h4>
+<p>En su forma mas básica para usar la API de geolocalizacion es la siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">geolocation</span>.<span style="color:#a6e22e">getCurrentPosition</span>((<span style="color:#a6e22e">position</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">position</span>);
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Esta sintaxis es completamente nueva, pero digamos que es la sintaxis para decirle al programa que cuando la API es llamada <code>navigator.geolocation.getCurrentPosition</code> requiere una funcion que haga algo con los datos. Hay varias formas de llamar una funcion como veremos mas adelante, pero es importante que vean esta forma por si se encuentran con ella. Entonces intentemos ver la posicion en que estamos usando la funcion <code>console.log</code>.</p>
+<figure><img src="web/images/console_log_geo.png"
+    alt="Figure 12: Estructura de la información de posición entregada en formato JSON, acrónimo de JavaScript Object Notation."><figcaption>
+      <p><span class="figure-number">Figure 12: </span>Estructura de la información de posición entregada en formato JSON, acrónimo de JavaScript Object Notation.</p>
+    </figcaption>
+</figure>
+
+<p>En la consola podemos ver que la API no entrega sólo números. Podemos observan que la información esta estructurada de una forma específica. En la consola podemos desplegar la información, y observar que dentro de <code>GeolocationPosition</code> se encuentra un subítem <code>coords</code>, que a su vez contiene los siguientes datos:</p>
+<ul>
+<li>
+<p>latitude (latitud)</p>
+</li>
+<li>
+<p>longitude (longitud)</p>
+</li>
+<li>
+<p>altitude (altura)</p>
+</li>
+<li>
+<p>accuracy (precisión)</p>
+</li>
+<li>
+<p>altitudeAccuracy (precisión de la altura)</p>
+</li>
+<li>
+<p>heading (dirección)</p>
+</li>
+<li>
+<p>speed (velosidad)</p>
+<p>y en unítem separado,</p>
+</li>
+<li>
+<p>time stamp (el tiempo en que los datos fueron capturados)</p>
+</li>
+</ul>
+<p>Este tipo de estructura de  datos es una convención del formato de intercambio de datos JSON, acrónimo de <em>JavaScript Object Notation</em>. Este tipo de formato es un archivo de texto sencillo que se emplea habitualmente para la comunicación de datos entre cliente y servidor. Sin embargo,  es ampliamente usado paa el intercambio de informacion de manera estructurada.</p>
+<p>En la consola podemos ver que la función <code>getCurrentLocation</code>
+nos entrega información en formato JSON el cual continen los datos que queremos asignar a nuestra variables en uns estructura particular. Si abrieramos el archivo en un editor de texto este se veria de esta forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;timestamp&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1717509611840</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;coords&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;accuracy&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">13.0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;latitude&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">53.0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;longitude&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">8.0</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;altitude&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;altitudeAccuracy&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;heading&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;speed&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>El formato o convención usada para estructurar los datos en el JSON la veremos mas adelante, cuando intentemos guardar los datos de nuestras psicogeografías. Por ahora, es importante que sepamos como vemos la forma en que estan estrucyurados estos datos con <code>console.log</code> y como podemos acceder a estos datos, debido a que la información como el tiempo y noticias entre otros , que podemos acceder desde la web y usar en nuestras maquinas psicogeográficas viene en formato JSON.</p>
+<h4 id="geodatos-y-variables-contenedoras">GeoDatos y variables contenedoras</h4>
+<p>Volviendo a como podemos acceder a los datos. Para hacer esto mas legible y poder guardar estos datos en variables declararemos nuestra propia funcion la cual usaremos en el metodo <code>getCurrentLocation</code>.</p>
+<p>Lo primero que se hará es declarar variables globales que guarden los datos que se obtendran al llamar a la API. Recordemos que las variables globales se declaran al comienzo de nuestro programa.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lat</span>; <span style="color:#75715e">//latitud
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lon</span>; <span style="color:#75715e">//longitud
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">alt</span>; <span style="color:#75715e">//altura
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prec</span>; <span style="color:#75715e">//precisión
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">altprec</span>; <span style="color:#75715e">// precisión de altura
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dir</span>; <span style="color:#75715e">//dirección
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vel</span>; <span style="color:#75715e">//velosidad
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tstamp</span>; <span style="color:#75715e">//time stamp
+</span></span></span></code></pre></div><h4 id="nuestra-primera-funcion">Nuestra primera funcion</h4>
+<p>Ahora haremos nuestra primera función para ser usada en <code>getCurrentPosition</code>.</p>
+<p>En general, una función es un &ldquo;subprograma&rdquo; que puede ser llamado desde otras partes del programa. Una función está compuesta de una secuencia de declaraciones llamada cuerpo de la función. Las funciones son como pequeñas maquinitas que pueden recibir y devolver valores. En otras palabras, tienen entradas y una salida de datos.</p>
+<p>A nuestra funcion la llamaremos &ldquo;getposition&rdquo;. En ella obtendremos los datos de <code>position</code> y los asignamos a nuestras variables. Por lo tanto, el parametro o argumento de entrada de nuestra funcion es la variable <code>position</code>, que es un objeto de datos con formato JSON.</p>
+<p>En nuestra funcion aisgnameros los diferentes tipos de datos que contiene el objeto <code>position</code> a nuestras variables que creamos de forma global. De esta forma podremos acceder a ellas desde cualquier parte de nuestro programa. La función es la siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getposition</span>(<span style="color:#a6e22e">position</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">latitude</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">longitude</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitude</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">accuracy</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitudeAccuracy</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">heading</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">speed</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">timestamp</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Si observamos, la forma de acceder a los datos de los ítems del JSON es con un punto. En otras palabras, como podiamos observar en la consola el dato de la <code>latitud</code> estaba adentro del objeto <code>coords</code>, por lo que el signo <code>.</code> sirve como un operador para navegar por la estructura de datos. del objeto <code>position</code> vamos al subobjeto <code>coords</code> y accedemos a cada unos de los datos por separado.</p>
+<h4 id="uso-de-la-funcion-en-getposition">Uso de la funcion en <code>getposition</code></h4>
+<p>De esta forma, nuestro código queda de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// geolocation variables
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lat</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lon</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">alt</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prec</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">altprec</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dir</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vel</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tstamp</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getposition</span>(<span style="color:#a6e22e">position</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">latitude</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">longitude</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitude</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">accuracy</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitudeAccuracy</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">heading</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">speed</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">timestamp</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">geolocation</span>.<span style="color:#a6e22e">getCurrentPosition</span>(<span style="color:#a6e22e">getposition</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="imprimiendo-los-datos">Imprimiendo los datos</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getposition</span>(<span style="color:#a6e22e">position</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">latitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">longitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">accuracy</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitudeAccuracy</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">heading</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">speed</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">timestamp</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">geolocation</span>.<span style="color:#a6e22e">getCurrentPosition</span>(<span style="color:#a6e22e">getposition</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">lat</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">lon</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#34;\n altura: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">alt</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#34;\n precision: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">prec</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#34;\n Dirección: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#34;\n Velosidad: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">vel</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#34;\n TimeStamp: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">tstamp</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Si nos fijamos en la conola podemos ver que en el rectangulo azul el número aumenta, pero las coordenadas y los otros datos son fijos.</p>
+<figure><img src="web/images/console_frames_blue_fixed_coords.png"
+    alt="Figure 13: coordenadas fijas mientras el número de veces (número en el cuadro azul) que los valores han sido re-escritos en la consola aumenta."><figcaption>
+      <p><span class="figure-number">Figure 13: </span>coordenadas fijas mientras el número de veces (número en el cuadro azul) que los valores han sido re-escritos en la consola aumenta.</p>
+    </figcaption>
+</figure>
+
+<p>Esto se debe a que <code>print</code> al estar en la función <code>draw</code> esta arrojando a la consola los valores 60 cuadros por segundo, sin embargo, el acceso a los datos mediante la función <code>getCurrentPosition</code> esta en la función <code>setup</code>, la que es ejecutada sólo al inicio del programa. Para que los datos sean actualizados constantemente, 60 veces por segundo, debemos cambiar la posicion del código <code>navigator.geolocation.getCurrentPosition(getposition);</code> a la función <code>draw</code>.</p>
+<p>El código quedaría de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getposition</span>(<span style="color:#a6e22e">position</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">latitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">longitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">accuracy</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitudeAccuracy</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">heading</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">speed</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">timestamp</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">geolocation</span>.<span style="color:#a6e22e">getCurrentPosition</span>(<span style="color:#a6e22e">getposition</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">lat</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">lon</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n altura: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">alt</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n precision: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">prec</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n Dirección: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n Velosidad: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">vel</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n TimeStamp: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">tstamp</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Podemos cambiar la función <code>print</code> por <code>text</code> para que sea mostrado en el canvas. Para esto vamos a crear una variable con nombre <code>s</code> que contenga todo el texto que escribimos, para ingresar esa variable al método <code>text</code>. Este método espera dos variables mas, que refiere a la posición del texto en el canvas. Elcódigo quedaría de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getposition</span>(<span style="color:#a6e22e">position</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">latitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">longitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">accuracy</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitudeAccuracy</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">heading</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">speed</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">timestamp</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">geolocation</span>.<span style="color:#a6e22e">getCurrentPosition</span>(<span style="color:#a6e22e">getposition</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lat</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">lon</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n altura: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">alt</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n precision: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">prec</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n Dirección: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n Velosidad: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">vel</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n TimeStamp: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">tstamp</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">text</span>(<span style="color:#a6e22e">s</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">50</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>De esta forma, terminamos la primera parte de nuestras maquinas psicogeografica, desde la cual podemos obtener datos desde nuestros GPS del telefono. Estos datos nos serviran para georeferenciar nuestra documentacion de la forma en que la ciudad nos afecta, de las zonas que nos atraen y repelen.</p>
+<p>Hasta el momento programar no parece tener nada de poetico, pero para hacer poesia primero hay que aprender un idioma, a hablr y escribir, y es precisamente esto es lo que estamos haciendo, aprender este lenguaje maquinico con el cual podremos hacer artefactos poéticos.</p>
+<h4 id="capturando-y-guardando-datos">Capturando y guardando datos</h4>
+<p>El primer ejercicio que vamos a hacer es guardan una impresión o idea en un texto asociado a una coordenada. Por motivos de diseño de p5js y para no tener que hacer llamados a un servidos, el programa ira guardando nuestras impresiones en la memoria RAM, hasta que finalmente le digamos nosotros que guarde el archivo.</p>
+<p>Que necesitamos para esto. Primero una interfaz gráfica para ingresar el texto, ingresarlo y finalmente guardar el archivo.</p>
+<p>Tenemos todos estos datos: latitud, longitud, altura, etc.. más el texto de nuestra impresion o pensamiento asociado a ese presciso punto en la ciudad, abre la pregunta acerca de como podemos contener estos datos. En otras palabras , como podemos asociar todos estos datos para despues guardarlos como parte de un conjunto.</p>
+<p>En la primera parte del taller vimos como hacer una clase, y como tenemos diferentes tipos de datos, numerico y de cadenas de caracteres como lo son las palabras y las frases que contienen nuestros pensamientos, vamos a crear una clase <code>class</code> que contenga los datos de latitud, longitud, altitud, dirección en la cual nos movemos, la velosidad el affecto o pensamiento y finalmente el tiempo o momento en que estos datos fueron obtenidos.</p>
+<p>Como lo hicimos en nuestro código anterior tambien crearemos variables que contengan los datos del GPS, ademas de una lista para contener las instancias de la clase que queramos guardan localmente en el computador o telefono.</p>
+<p>Finalmente posicionamos la función para capturar los datos del GPS como lo fhicimos anteriormente.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">affects</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">affect</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">latitude</span>, <span style="color:#a6e22e">longitude</span>, <span style="color:#a6e22e">altitud</span>, <span style="color:#a6e22e">direction</span>, <span style="color:#a6e22e">velosity</span>, <span style="color:#a6e22e">affect</span>, <span style="color:#a6e22e">time</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">latitude</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">latitude</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">longitude</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">longitude</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">altitude</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">altitud</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">direction</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">direction</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">velocity</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">velosity</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">affect</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">affect</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">time</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">time</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getposition</span>(<span style="color:#a6e22e">position</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">latitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">longitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">accuracy</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitudeAccuracy</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">heading</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">speed</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">timestamp</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="función-setup-y-interfaz-gráfica-para-guardar-los-datos-dot">Función setup y interfaz gráfica para guardar los datos.</h4>
+<p>La idea es que los datos recopilados los podamos guardar para despues ser usados.  Para esto usaremos un botón, que viene incorporado en la libreria p5.js. Declaramos un boton de la siguiente forma en la función <code>setup</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">guardarButton</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createButton</span>(<span style="color:#e6db74">&#39;Guardar Data de afectos&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">guardarButton</span>.<span style="color:#a6e22e">mousePressed</span>(<span style="color:#a6e22e">guardarAffectsFile</span>);
+</span></span></code></pre></div><p>en donde la variable <code>downloadButton</code> sostienen un nuevos botón que tendra como nombre la frase &ldquo;Guardar Data de afectos&rdquo;</p>
+<p>En la línea siguiente le decimos a nuestr boton que cuando es presionado (método <code>mousepressed</code>) ejecute la funcón <code>guardarAffectsData</code></p>
+<p>Sin embargo todavia no ingresamos ningun dato. Para esto ocuparemos una funcion especial el p5.js como lo es la funcion <code>draw</code> o <code>setup</code>. Esta funcion es parte de un grupo de funciones que son llamadas cuando existen eventos del ratón o el teclado.</p>
+<p>en particular la funcion que usaremos es <code>mouseCliked()</code>, que lo que hace es que si clikeamos dentro de nuestro canvas se abrera un <em>prompt</em> o casillero para que ingresemos nuetro pensamiento. Una ves que lo ingresemos y pretamos <em>ok</em> agregará una instancia de la clase affect a nuestra listas de afectos <code>affects</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">mouseClicked</span>(){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">aff</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prompt</span>(<span style="color:#e6db74">&#39;Ingresa un nuevo afecto o pensamiento&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">affects</span>.<span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">affect</span>(<span style="color:#a6e22e">lat</span>, <span style="color:#a6e22e">lon</span>, <span style="color:#a6e22e">alt</span>, <span style="color:#a6e22e">dir</span>, <span style="color:#a6e22e">vel</span>, <span style="color:#a6e22e">aff</span>, <span style="color:#a6e22e">tstamp</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">affect</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">affects</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">affect</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Finalmente en nuestra funcion <code>downloadAffectsFile()</code>, que es llamada cuando apretamos el boton para guardar nuestros datos una vez que hemos ingresado todos los que queramos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">guardarAffectsFile</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">saveJSON</span>(<span style="color:#a6e22e">affects</span>, <span style="color:#e6db74">&#39;affects.json&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>dentro de la función usamos el método <code>saveJSON</code> que viene incluido en p5.js. Este método tienen como entrada dos parametros. el primero es la lista que se quiere guardar, y el segundo el nombre del archivo <code>.json</code> en que se guardaran los datos.</p>
+<p>Existen otros formatos para guardar los datos como archivos <code>.csv</code> que son tablas como las de excell separadas por una coma, sin embargo es conveniente guardar los datos en json por dos razones. Primero porque no tenemos que manipular los datos de las instancia sde la clase para posicionarlas en columnas y filas, y segundo porque los datos automatiamente seran guardados con el nombre que le dimos en la clase, los cuales podemos ver usando <code>console.log</code>, cuando queramos usarlos.</p>
+<p>el archivo <code>json</code> queda de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  [
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;latitude&#34;</span><span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">33.4594048</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;longitude&#34;</span><span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">70.6576384</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;altitude&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;direction&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;velocity&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;affect&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;el sol reflejado en el mar se adhiere al gris entorno&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;time&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1762181299902</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;latitude&#34;</span><span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">33.4594048</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;longitude&#34;</span><span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">70.6576384</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;altitude&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;direction&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;velocity&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;affect&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;el descanso en la escalera produce la poesía en el puerto&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;time&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1762181356565</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>podemos ver como la información queda ordenada en objetos, con sus respectivos referentes a lo que guardan.</p>
+<p>El código final es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">affects</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">affect</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">latitude</span>, <span style="color:#a6e22e">longitude</span>, <span style="color:#a6e22e">altitud</span>, <span style="color:#a6e22e">direction</span>, <span style="color:#a6e22e">velsity</span>, <span style="color:#a6e22e">affect</span>, <span style="color:#a6e22e">time</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">latitude</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">latitude</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">longitude</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">longitude</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">altitude</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">altitud</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">direction</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">direction</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">velocity</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">velsity</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">affect</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">affect</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">time</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">time</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getposition</span>(<span style="color:#a6e22e">position</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">latitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">lon</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">longitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitude</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">prec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">accuracy</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">altprec</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">altitudeAccuracy</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">dir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">heading</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">vel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">coords</span>.<span style="color:#a6e22e">speed</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">tstamp</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">position</span>.<span style="color:#a6e22e">timestamp</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">guardarButton</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createButton</span>(<span style="color:#e6db74">&#39;Guardar Data de afectps&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">guardarButton</span>.<span style="color:#a6e22e">mousePressed</span>(<span style="color:#a6e22e">guardarAffectsFile</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">background</span>(<span style="color:#ae81ff">220</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">geolocation</span>.<span style="color:#a6e22e">getCurrentPosition</span>(<span style="color:#a6e22e">getposition</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lat</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">lon</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n altura: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">alt</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n precision: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">prec</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n Dirección: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">dir</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n Velosidad: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">vel</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\n TimeStamp: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">tstamp</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">text</span>(<span style="color:#a6e22e">s</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">50</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">mouseClicked</span>(){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">aff</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prompt</span>(<span style="color:#e6db74">&#39;Ingresa un nuevo afecto o pensamiento&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">affects</span>.<span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">affect</span>(<span style="color:#a6e22e">lat</span>, <span style="color:#a6e22e">lon</span>, <span style="color:#a6e22e">alt</span>, <span style="color:#a6e22e">dir</span>, <span style="color:#a6e22e">vel</span>, <span style="color:#a6e22e">aff</span>, <span style="color:#a6e22e">tstamp</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">affect</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">affects</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">affect</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">guardarAffectsFile</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">saveJSON</span>(<span style="color:#a6e22e">affects</span>, <span style="color:#e6db74">&#39;affects.json&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="otros-datos-dot">Otros Datos.</h4>
+<p>Ahora vamos a ver una serie de otros datos que podemos capturar, para que ustedes puedan pensar que otras cosas les gustaria capturar, y de que forma implementarlos. En todos estos casos, el procedimiento es parecido. Los datos os contenemos en una lista para que al final los guardemos en un archivo json.</p>
+<h4 id="color-dominante--imágenes-como-dato">Color dominante (imágenes como dato)</h4>
+<p>El primer ejemplo que vamos a ver es la obtencion de un color dominante en las imagenes que tomemos de un lugar. Este color dominante va a ser el promedio de los colores que tiene la imagen.</p>
+<h4 id="ejercicios">Ejercicios</h4>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  ehjercicio que guarde el color promedio de una imagen obtenida en un especio.</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  contar pasos, o velosidad de pasos?</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo done DONE">DONE</span>  terminar el ejercicio del texto.</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  hacer un programa que se guarde un dibujo.</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo done DONE">DONE</span>  hacer un programa que se le introdusca un texto y lo guarde junto con la coordenada en la cual el texto fue escrito</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  hacer un ejercicio que muestre la ruta en tiempo real y que guarde las coordenadas en el tiempo en un archivo. Quizas fucionarla con la anterior. tener que guardar automatcamente en fragmentos para salvaguardar la memoria local.</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  hacer un appp en el cual se pueda dibujar o rallar y guarde esa imagen o canvas junto con la coordenada en el cual fue hecho.</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  hacer un ejercicio que grabe audio o imagenes y guarde el archivo junto con la ccoordenada.</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p><span class="org-todo todo TODO">TODO</span>  hacer uno que baje una imagen random de perros cada vez que se vea un perro en la calle, o que guarde el mensaje para despues ser llamado. de la api: <a href="https://dog.ceo/dog-api/">https://dog.ceo/dog-api/</a></p>
+<p>buscar otras apis de noticias u otros.</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Referencias</p>
+<p><span class="org-target" id="org-target--1"></span> <a href="http://library.nothingness.org/articles/SI/en/display/3">Guy-Ernest Debord, Methods of Détournement, 1956.</a></p>
+</li>
+</ul>
+<h3 id="p03-dot-visualización-psicogeográfica--detournement-con-datos">P03. Visualización Psicogeográfica (detournement con datos)</h3>
+<p>a proper visualization is a kind of narrative,
+<code>========</code>
+Visualizing Data (Desconocido)</p>
+<ul>
+<li>Subrayado Pos. 420  | Añadido el viernes 14 de julio de 2023 16H52&rsquo; GMT</li>
+</ul>
+<p>The Seven Stages of Visualizing Data</p>
+<p>las etapas consisten en lo siguiente: (1) Adquisición: Obtención de datos. Estos pueden ser los archivos de un disco, datos de sensores geológicos o meteorológicos, datos de auto seguimiento como las horas dormidas por día, los pasos caminados, o incluso datos cualitativos o especulativos como la sensación o animo por día. En este sentido podemos reconocer que generalmente los datos tienen una componente temporal, sin embargo también pueden ser de acuerdo a criterios de cantidad que correspondan a otras variables. (2) Estructuración o Parse (Parsing) en ingles: Esta etapa corresponde a proporcionar una estructura para el significado de los datos, y ordenarlos en categorías. Esta etapa depende mucho de lo que esperamos encontrar en los datos, o la pregunta que intentamos responder con los datos obtenidos. (3) Filtro: Esta etapa esta muy ligada a la anterior, y consiste en la elación de los datos que no son de interés en nuestra búsqueda.(4)Representación: Elegir un modelo visual básico para representar lo datos. En su manera más simple esto pueden ser gráfica de barras, listas o la forma de árbol, sin embargo estas también pueden ser dispuestas en espacios tridimensionales, abstracciones o incluso usando sonido. Mucho de la forma a elegir para representar la data depende de las características de esta: si tienen forma periódica, si tienen un carácter temporal, o si su valor nace de la relación con muchas otras variables entre muchas otras posibilidades.(5) Refinación: Esta etapa consiste en el mejorar iterativamente la forma de representación básica para así lograr una mayor claridad o hacerla visualmente mas atractiva. (6) Interacción: En esta etapa se buscan agregar métodos o formas de manipulación de los datos para controlar que características son visibles o manipular de forma expresiva el sistema que representa los datos.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p>contenedores</p>
+<p>La visualización de datos es una de las áreas más activas en la intersección del código y la gráfica y es también una de las utilizaciones más populares de p5.js. Es un buen momento para retroceder y discutir cómo se introdujo la información de datos a lo largo de este libro. Una variable en un esbozo de p5.js se utiliza para almacenar una pieza de información de datos. Empezamos con primitivos. En este caso, la palabra primitivo significa una sola pieza de información de datos. Se crea un arreglo para almacenar una lista de elementos dentro de un solo nombre de variable.</p>
+</li>
+</ul>
+
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    
+<h1 class="about__title"></h1>
+
+</div>
+
+
+<ul class="aside__social-links">
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    <p>- PSICOGEOGRAFÍAS DE DATOS</p>
+    
+        <p>
+            By [pemb]
+            
+        </p>
+    
+
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p>
+    
+    
+    
+    
+    
+    
+      
+    
+      
+    
+    
+    
+      
+      
+          
+            
+            
+                <br/><span class="active">$ echo $LANG<br/><b></b></span><br/>
+
+            
+          
+      
+    
+</p>
+<br /><br />
+<p class="copyright"></p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>

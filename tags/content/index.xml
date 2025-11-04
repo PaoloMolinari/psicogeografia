@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Content on Terminal</title>
+    <link>//localhost:1313/tags/content/</link>
+    <description>Recent content in Content on Terminal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 03 Nov 2025 19:47:00 -0300</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/content/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CURSO DE ARTE Y PROGRAMACIÓN CREATIVA</title>
+      <link>//localhost:1313/posts/tallerpsicodata/</link>
+      <pubDate>Mon, 03 Nov 2025 19:47:00 -0300</pubDate>
+      <guid>//localhost:1313/posts/tallerpsicodata/</guid>
+      <description>&lt;h2 id=&#34;taller-01-dot-psicogeografía-con-datos&#34;&gt;TALLER 01. PSICOGEOGRAFÍA CON DATOS&lt;/h2&gt;&#xA;&lt;h3 id=&#34;p01-dot-intro-p5-dot-js&#34;&gt;P01. Intro p5.js&lt;/h3&gt;&#xA;&lt;h4 id=&#34;s01-dot-introducción-al-taller&#34;&gt;&lt;strong&gt;S01. Introducción al Taller&lt;/strong&gt;&lt;/h4&gt;&#xA;&lt;p&gt;Este taller esta basado en Kit Kuksenok receta llamada &lt;em&gt;&lt;a href=&#34;https://criticalcode.recipes/contributions/critical-data-practice-at-home-and-with-friends&#34;&gt;Critical Data practice Home with Friends&lt;/a&gt;&lt;/em&gt;, y busca mediante el uso de datos a través de la práctica de programación creativa, establecer una relación crítica con los amplios problemas socio-tecnicos que emerjen en una sociedad que está crecientemente determinada por datos.&lt;/p&gt;&#xA;&lt;p&gt;De manera resumida, el taller busca que cada participante cree representaciones psicogeografías mediante el desarrollo de programas, usando herramientas libres con tecnología web, que nos permitan la recolección, el ordenamiento y la visualización de datos que respondan a experiencias individuales, subjetivos y especulativos en relación a lugares y espacios de la ciudad. Posteriormente, con los datos recogidos por todos ustedes haremos un pseudo mapa para que otros puedan navegar psicogeográficamente la ciudad con sus dispositivos.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
