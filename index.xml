@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PSICOGEOGRAFÍA CON DATOS</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on PSICOGEOGRAFÍA CON DATOS</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TALLER 01. PSICOGEOGRAFÍA CON DATOS</title>
+      <link>//localhost:1313/posts/tallerpsicodata/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/tallerpsicodata/</guid>
+      <description>&lt;h2 id=&#34;p01-dot-introducción-a-p5-dot-js&#34;&gt;&lt;strong&gt;P01. Introducción a p5.js&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;introducción&#34;&gt;&lt;strong&gt;Introducción&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Este taller esta basado en Kit Kuksenok receta llamada &lt;em&gt;&lt;a href=&#34;https://criticalcode.recipes/contributions/critical-data-practice-at-home-and-with-friends&#34;&gt;Critical Data practice Home with Friends&lt;/a&gt;&lt;/em&gt;, y busca mediante el uso de datos a través de la práctica de programación creativa, establecer una relación crítica con los amplios problemas socio-tecnicos que emerjen en una sociedad que está crecientemente determinada por datos.&lt;/p&gt;&#xA;&lt;p&gt;De manera resumida, el taller busca que cada participante cree representaciones psicogeografías mediante el desarrollo de programas, usando herramientas libres con tecnología web, que nos permitan la recolección, el ordenamiento y la visualización de datos que respondan a experiencias individuales, subjetivos y especulativos en relación a lugares y espacios de la ciudad. Posteriormente, con los datos recogidos por todos ustedes haremos un pseudo mapa para que otros puedan navegar psicogeográficamente la ciudad con sus dispositivos.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
